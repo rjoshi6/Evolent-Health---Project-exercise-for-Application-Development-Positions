@@ -15,5 +15,6 @@ I haven't added the password to the database intentionally.
 
 Once the above instructions are performed, the project can be accessed at http://localhost:(portNumber)/angularSPAevolent/
 
+Please have a look at it, In the meantime I am figuring out how to deploy the application on EC2.
 
 
