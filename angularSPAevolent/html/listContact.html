@@ -1,0 +1,25 @@
+<h1>List of Contacts is as Follows</h1>
+{{message}}
+
+<div ng-init="displayContacts()">
+<table border="1px">
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Second Name</th>
+			<th>Email</th>
+			<th>Phone Number</th>
+			<th>Status</th>
+		</tr>	
+	</thead>
+	<tbody>
+		<tr ng-repeat="contact in data">
+				<td>{{contact.first_name}}</td>
+				<td>{{contact.second_name}}</td>
+				<td>{{contact.email}}</td>
+				<td>{{contact.phone_number}}</td>
+				<td>{{contact.status}}</td>
+		</tr>
+	</tbody>
+</table>
+</div>

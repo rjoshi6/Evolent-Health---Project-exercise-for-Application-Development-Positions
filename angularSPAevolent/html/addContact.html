@@ -1,0 +1,44 @@
+<br><br>{{message}}
+<form name="addForm" novalidate>
+	<table>
+		<tr>
+			<td><label>First Name: </label></td><td><input type="text" name="fname" ng-model="firstname" required ng-pattern="/^[a-zA-Z]+$/"></td>
+			 <td>
+				<span ng-show="addForm.fname.$invalid && addForm.fname.$touched " style="color:red" >The First name is required.</span>
+				<span ng-show="addForm.fname.$error.pattern"  style="color:red">Invalid Name, only Alphabets.</span>
+   			</td>	
+		</tr>
+		<tr>
+			<td><label>Second Name: </label></td><td><input type="text" name="sname"ng-model="secondname" required ng-pattern="/^[a-zA-Z]+$/"></td>	
+		  	<td>
+				<span ng-show="addForm.sname.$error.pattern"  style="color:red">Invalid Name, only Alphabets.</span>
+				<span ng-show="addForm.sname.$touched  && addForm.sname.$invalid" style="color:red" >The Second name is required.</span>
+   			</td>	
+		</tr>
+		<tr>
+			<td><label>Email: </label></td><td><input type="email" name="Email" ng-model="email" required ng-pattern="/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/"></td>
+			<td>
+				<span ng-show="addForm.Email.$error.pattern"  style="color:red">Invalid Email.</span>
+				<span ng-show="addForm.Email.$touched  && addForm.Email.$invalid" style="color:red" >The Email is required.</span></td>
+		</tr>		
+		<tr>
+			<td><label>Phone Number: </label></td><td><input type="text" name="phone" placeholder="##########" ng-model="phonenumber" required ng-pattern="/[1-9]{1}[0-9]{9}$/"></td>
+			<td>
+
+				<span ng-show="addForm.phone.$touched  && addForm.phone.$invalid" style="color:red" >The phone is required.</span>
+				<span ng-show="addForm.phone.$error.pattern"  style="color:red">Only numbers according to pattern provided.</span>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Status: </label></td>
+			<td><input type="radio"  value="active" ng-model = "status" name="status"><label>Active</label></td>
+			<td><input type="radio"  value="inactive" ng-model="status" name="status"><label>Inactive</label></td>
+			<td>
+				<span ng-show="addForm.status.$touched  && addForm.status.$invalid" style="color:red" >The status is required.</span>
+			</td>
+		</tr>
+		<tr>
+			<td><label><input ng-disabled="addForm.$pristine|| addForm .$invalid"style="color:blue" class="btnSubmit" type="button" value="Submit" ng-click="insertdata()" /><label></td>
+		</tr>	{{msg}}{{error}}
+	</table>
+</form>

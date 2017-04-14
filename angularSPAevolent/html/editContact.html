@@ -1,0 +1,58 @@
+<h4>Press edit and make changes in the form </h4>{{msg}}{{phone_number}}{{phone}}</br></br>
+<form name="addForm">
+<table>
+		<tr>
+			<td>First Name: </td><td><input type="text" name="fname" ng-model="firstname" required ng-pattern="/^[a-zA-Z]+$/"></td>
+			<td>
+				<span ng-show="addForm.fname.$invalid && addForm.fname.$touched " style="color:red" >The First name is required.</span>
+				<span ng-show="addForm.fname.$error.pattern"  style="color:red">Invalid Name, only Alphabets.</span>
+   			</td>	
+		</tr>
+		<tr>
+			<td>Second Name: </td><td><input type="text" name="sname" ng-model="secondname" required ng-pattern="/^[a-zA-Z]+$/"></td>
+			<td>
+				<span ng-show="addForm.sname.$error.pattern"  style="color:red">Invalid Name, only Alphabets.</span>
+				<span ng-show="addForm.sname.$touched  && addForm.sname.$invalid" style="color:red" >The Second name is required.</span>
+   			</td>	
+		</tr>
+		<tr>
+			<td>Email: </td><td><input type="email" name="Email" ng-model="email" required ng-pattern="/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/"></td>
+			<td>
+				<span ng-show="addForm.Email.$error.pattern"  style="color:red">Invalid Email.</span>
+				<span ng-show="addForm.Email.$touched  && addForm.Email.$invalid" style="color:red" >The Email is required.</span></td>
+		</tr>		
+		<tr>
+			<td>Status: </td>
+			<td><input type="radio"  value="active" name="status" ng-model = "status">Active</td>
+			<td><input type="radio"  value="inactive" ng-model="status">Inactive</td>
+			<td>
+				<span ng-show="addForm.status.$touched  && addForm.status.$invalid" style="color:red" >The status is required.</span>
+			</td>
+		</tr>
+		<tr>
+			<td><input ng-disabled="addForm.$pristine|| addForm.$invalid" style="color:blue" type="button" value="Submit" ng-click="updateContacts()" />
+		</tr>	{{error}}
+</form>
+<div ng-init="displayContacts()">
+<table border="1px">
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Second Name</th>
+			<th>Email</th>
+			<th>Phone Number</th>
+			<th>Status</th>
+		</tr>	
+	</thead>	
+	<tbody>
+		<tr ng-repeat="contact in data">
+				<td>{{contact.first_name}}</td>
+				<td>{{contact.second_name}}</td>
+				<td>{{contact.email}}</td>
+				<td>{{contact.phone_number}}</td>
+				<td>{{contact.status}}</td>
+				<td><button ng-click="editContacts(contact.phone_number);">Edit</button></td>
+		</tr>
+	</tbody>
+</table>
+</div>

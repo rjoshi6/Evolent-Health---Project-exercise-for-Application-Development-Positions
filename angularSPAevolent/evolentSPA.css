@@ -1,0 +1,24 @@
+*{
+		padding:0px;
+		
+}
+form
+{
+background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  margin: auto;
+  position: relative;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  color: "Green";
+  text-decoration: none;
+  border-radius: 10px;
+}
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

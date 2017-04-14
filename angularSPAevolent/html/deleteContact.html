@@ -1,0 +1,26 @@
+<h4>Hit the delete button to remove a contact</h4>{{message}}
+{{msg}}
+{{email}}
+<div ng-init="displayContacts()">
+<table border="1px">
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Second Name</th>
+			<th>Email</th>
+			<th>Phone Number</th>
+			<th>Status</th>
+		</tr>	
+	</thead>
+	<tbody>
+		<tr ng-repeat="contact in data">
+				<td>{{contact.first_name}}</td>
+				<td>{{contact.second_name}}</td>
+				<td>{{contact.email}}</td>
+				<td>{{contact.phone_number}}</td>
+				<td>{{contact.status}}</td>
+				<td><button ng-click="deleteContacts(contact.phone_number);">Delete</button></td>
+		</tr>
+	</tbody>
+</table>
+</div>
