@@ -10,7 +10,7 @@ Installing the Application:
 XAMPP needs to be installed to view this application.
 Apache server and MySQL must be started before running via the control panel for XAMPP.
 The folder named "angularSPAevolent" must be put into the "htdocs" folder inside "Apache" folder in the xampp directory which is created once XAMPP is installed.
-The .sql file must be imported in phpmyadmin or http://localhost:(portNumber)/phpmyadmin
+The .sql file present in the Database_angularSPAevolent folder must be imported in phpmyadmin or http://localhost:(portNumber)/phpmyadmin
 I haven't added the password to the database intentionally. 
 
 Once the above instructions are performed, the project can be accessed at http://localhost:(portNumber)/angularSPAevolent/
